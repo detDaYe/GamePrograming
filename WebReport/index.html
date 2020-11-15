@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ballistic</title>
+        <link id="style_tag" rel="stylesheet" href="css/styles/develop.css">
+
+        <script type="text/javascript" src="js/ballistic.js"></script>
+        <script type="text/javascript" src="js/display.js"></script>
+        <script type="text/javascript" src="js/target.js"></script>
+        <script type="text/javascript" src="js/manager.js"></script>
+    </head>
+    <body onload="startGame();">
+        <canvas id="primary_ballistic_display" width="1200" height="500">
+            sorry. Your browser does not support CANVAS
+        </canvas>
+
+        <p>
+            <select name="styleSheet" onchange="document.getElementById('style_tag').setAttribute('href', this.value);">
+            <option value="css/styles/develop.css">default</option>
+            <option value="css/styles/dark.css">dark</option>
+            </select>
+        </p>
+        
+        
+        <input type="range" min="3" max="20" step="0.1" id="v0" value="10" onchange="v0_bar(this);" readOnly="readOnly"><font id="v0_text">10 m/s</font> <br>
+        <input type="range" min="0" max="90" step="1.0" id="angle" value="45" onchange="angle_bar(this)"> <font id="angle_text">45 deg</font> <br>
+        <input type="button" id="fire" value="Fire!" onclick="fireProjectile();">
+        <input type="button" id="reset" value="reset" onclick="reset();">
+        <p>
+           <table id="projectiles" border="1">
+               <tr>
+                   <td colspan="3" width="300">
+                       <center>
+                           Ball
+                       </center>
+                   </td>
+               </tr>
+
+               <tr>
+                   <td rowspan="2">
+                       <center>
+                           Pos
+                       </center>
+                   </td>
+                   <td>
+                       <center>
+                           x
+                       </center>
+                   </td>
+                   <td id="ball_x">
+                       pos_x
+                   </td>
+               </tr>
+
+               <tr>
+                   <td>
+                       <center>
+                           y
+                       </center>
+                   </td>
+                   <td id="ball_y">
+                       pos_y
+                   </td>
+               </tr>
+
+               <tr>
+                   <td rowspan="2">
+                       <center>
+                           Velocity
+                       </center>
+                   </td>
+
+                   <td>
+                       <center>
+                           vx
+                       </center>
+                   </td>
+                   <td id="ball_vx">
+                       vx0
+                   </td>
+               </tr>
+
+               <tr>
+                   <td>
+                       <center>
+                           vy
+                       </center>
+                   </td>
+                   <td id="ball_vy">
+                       vy0
+                   </td>
+               </tr>
+           </table>
+        </p>
+
+        <!-- canvas id="secondary" width="600" height="500">
+            
+        </canvas -->
+        
+    </body>
+</html>
