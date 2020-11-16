@@ -8,11 +8,13 @@
     color: black;
 }
 
+.config{
+    color:black;
+}
 :root{
     --test-variable: brown;
     --projectile-color: rgb(69, 212, 3);
     --target-color: red;
-    --conflict-color: orange;
 }
 
 body{
